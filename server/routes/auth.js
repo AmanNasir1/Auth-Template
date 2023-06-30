@@ -1,12 +1,17 @@
 const express = require("express");
 const User = require("../models/user-model");
 const bcrypt = require("bcrypt");
-
+const {
+  registerValidation,
+  loginValidation,
+} = require("../middleware/authValidation");
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
   // res.json({ message: "Register Success" });
 
+  const { error } = registerValidation(req.body);
+  if (error) return res.send({ error: error.details[0].message });
   const exist = await User.findOne({ email: req.body.email });
   if (exist) return res.send({ error: "Email Already Exist " });
 
@@ -29,11 +34,14 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   // res.json({ message: "Login Success" });
+  const { error } = loginValidation(req.body);
+  if (error) return res.send({ error: error.details[0].message });
 
   const user = await User.findOne({ email: req.body.email });
   if (!user) return res.send({ error: "Email Not Found" });
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
+  
   if (!validPassword) {
     return res.send({ error: "Password is Incorrect", errortype: "password" });
   }

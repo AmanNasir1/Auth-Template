@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginDetails {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  height: 80%;
+  background-color: lavender;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  align-items: center;
+}
+
+.loginDetails h1 {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.userIcon {
+  width: 90px;
+  height: 85px;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  color: lavender;
+  background-color: teal;
+  border-radius: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.loginDetails input {
+  width: 300px;
+  height: 35px;
+  margin: 1rem 0;
+  padding: 0 10px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 7px;
+}
+
+.loginDetails button {
+  width: 150px;
+  height: 35px;
+  border: none;
+  outline: none;
+  background-color: teal;
+  color: lavender;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.loginDetails button:hover {
+  background-color: lavender;
+  border: 2px solid teal;
+  color: teal;
+  transition-duration: 0.2s;
+}
+
+.link-signup {
+  text-decoration: none;
+  color: teal;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.link-signup:hover {
+  transform: scale(1.1);
+  /* transition-duration: 0.2s; */
+}
